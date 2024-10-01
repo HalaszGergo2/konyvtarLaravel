@@ -29,11 +29,7 @@ class UserFactory extends Factory
             'password' => Str::random(3),
             'permission' => rand(0, 2),
             'email_verified_at' => now(),
-<<<<<<< HEAD
             'remember_token' => Str::random(10),
-=======
-            'remember_token' => Str::random(10)
->>>>>>> 496461b98e2c85c218aece720c04c77cb9668b35
         ];
     }
 
