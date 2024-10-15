@@ -35,11 +35,6 @@ class CopyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-<<<<<<< HEAD
-
-=======
-        //
->>>>>>> 496461b98e2c85c218aece720c04c77cb9668b35
     }
 
     /**

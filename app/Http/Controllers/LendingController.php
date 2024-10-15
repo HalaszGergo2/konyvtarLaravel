@@ -28,7 +28,7 @@ class LendingController extends Controller
 
     public function update(Request $request, string $user_id, $copy_id, $start)
     {
-        $record = Lending::find($user_id, $copy_id, $start);
+        $record = $this->show($user_id, $copy_id, $start);
         $record->fill($request->all());
         $record->save();
     }

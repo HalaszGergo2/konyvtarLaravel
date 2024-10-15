@@ -21,7 +21,7 @@ class CopyFactory extends Factory
         return [
         	'book_id' => Book::all()->random()->book_id,
             'hardcovered' => rand(0,2),
-            'publication' => rand(1900, 2024),
+            'publication' => 2021,
             'status' => rand(0,3)
 ];
 
