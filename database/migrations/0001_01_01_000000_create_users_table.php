@@ -25,8 +25,19 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        User::create(['name'=>'admin', 'email'=> 'admin@admin.hu', 'password' => Hash::make('admin12345'), 'role' => 0]);
-        User::create(['name'=>'user', 'email'=> 'user@user.hu', 'password' => Hash::make('user12345')]);
+        User::create(['name' => 'admin',
+                      'email' => 'admin@admin.hu',
+                      'password' => Hash::make('admin12345'),
+                      'role' => 0]);
+
+        User::create(['name' => 'librarian1',
+                      'email' => 'librarian1@librarian.hu',
+                      'password' => Hash::make('librarian12345'),
+                      'role' => 1]);
+
+        User::create(['name' => 'user',
+                      'email' => 'user@user.hu',
+                      'password' => Hash::make('user12345')]);
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Book;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Copy>
@@ -24,6 +25,6 @@ class CopyFactory extends Factory
             'publication' => 2021,
             'status' => rand(0,3)
 ];
-
     }
+    
 }
