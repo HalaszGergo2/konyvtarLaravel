@@ -66,4 +66,12 @@ class UserController extends Controller
         ->where('id', $user->id)
         ->get();
     }
+
+    public function userReservationFilterUser(){
+        $user = Auth::user();	//bejelentkezett felhasználó
+        //lendings a függvény neve
+        return User::with('reservations')
+        ->where('id', $user->id)
+        ->get();
+    }
 }

@@ -5,11 +5,12 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CopyController;
 use App\Http\Controllers\LendingController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Librarian;
 use App\Http\Middleware\Warehouseman;
-use Illuminate\Http\Request;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/register',[RegisteredUserController::class, 'store']);
@@ -33,6 +34,14 @@ Route::middleware(['auth:sanctum'])
 
     //milyen könyvek
     Route::get('/active-lendings-data', [LendingController::class, "activeLendingsData"]);
+
+    Route::get('/reserved-books', [ReservationController::class, "reservedBooks"]);
+
+    Route::get('/user-reservation-filter-user', [UserController::class, 'userReservationFilterUser']);
+
+    Route::get('/reserved-count', [ReservationController::class, 'reservedCount']);
+
+    Route::get('/books-i-lend-from', [LendingController::class, 'booksILendFrom']);
 
     Route::get('/lendings-copies', [LendingController::class, 'lendingsFilterByUser']);
 
